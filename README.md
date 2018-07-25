@@ -6,10 +6,10 @@ A Scala / functional programming case study based on
 ## Overview
 
 Imagine some route finding API that provides
-possible paths from an origin to a destination.
+possible paths from a source to a destination.
 
 Given a list of paths, select the best one
-based on distance and whether it includes intermediate stops.
+based on distance and whether it includes intermediate stops (points along the path).
 
 Expect the API to produce **only valid path lists**
 according to the following specification:
@@ -19,14 +19,10 @@ according to the following specification:
 
 - A path has:
    - a list of segments
-   - a list of stops
 
 - A segment has:
-   - an origin point
+   - a source point
    - a destination point
-
-- A stop has:
-   - a point
 
 - A point has:
    - an x coordinate
@@ -41,9 +37,9 @@ Try solving the kata in the following steps:
     2. Compute the distance of a path
     3. Find the shortest path in a list of paths
 2. Write code to handle stops:
-    1. Enumerate all stops in a path
-    2. Filter paths keeping only those which include a stop
-    3. Filter paths keeping only those which include a given list of stops
+    1. Calculate the points along a path
+    2. Filter paths keeping only those which include a point
+    3. Filter paths keeping only those which include a given list of points
 3. Write code to find the best path in a list of paths
 
 Bonus problem (harder):
