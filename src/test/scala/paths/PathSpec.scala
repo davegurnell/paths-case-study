@@ -9,8 +9,8 @@ class PathSpec extends FlatSpec with Matchers {
   val p4 = Point(1, 1)
   val p5 = Point(4, 5)
 
-  "path.distance" should "calculate a distance" in {
-    Path(p1, p2, p4, p5).distance should equal(7.0 +- 0.001)
+  "path.length" should "calculate a length" in {
+    Path(p1, p2, p4, p5).length should equal(7.0 +- 0.001)
   }
 
   "path.stops" should "enumerate the stops" in {
@@ -36,7 +36,7 @@ class PathSpec extends FlatSpec with Matchers {
     Path(List(s1, s3, s2)).isValid should equal(false)
   }
 
-  "Path.shortest" should "find the shortest path by distance" in {
+  "Path.shortest" should "find the shortest path by length" in {
     val path1 = Path(p1, p2, p3)
     val path2 = Path(p1, p2, p4)
     val path3 = Path(p1, p4, p1)
